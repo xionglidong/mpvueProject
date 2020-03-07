@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <div class="login">
-      <!-- <img src="/static/imgs/guide_bg.jpg" alt> -->
-        
+      
         <div class="info-container">
-            <input type="text" placeholder="用户名" v-model="name">
-            <input type="password" placeholder="密码" v-model="password">
+            <input type="text" placeholder="用户名" v-model.lazy="name">
+            <input type="password" placeholder="密码" v-model.lazy="password">
         </div>
+      
       <div class="btn-container">
         <button class="btn" @click="register">注册</button>
         <button class="btn" @click="sign">登录</button>
@@ -15,6 +15,7 @@
       <div class="learn">
         <button open-type="getUserInfo" @getuserinfo="getUserInfo">微信登录</button>
       </div>
+    
     </div>
   </div>
 </template>
@@ -66,7 +67,6 @@ export default {
     getUserInfo(e) {
       // 判断授权是否成功
       if (e.mp.detail.userInfo) {
-        //console.log(e.mp.detail.userInfo);
         // 存储到vuex
         this.$store.dispatch("setIsAuthenticated", true);
         this.$store.dispatch("setUser", e.mp.detail.userInfo);
