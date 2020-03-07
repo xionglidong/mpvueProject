@@ -51,8 +51,11 @@ export default {
             region:['湖北省','孝感市','孝南区'],
             gender:'',
             img:'',
-            double:true
-           
+            double:true,
+            reg_name:/.{4,8}/,
+            reg_password:/\w{6,}/
+            
+    
             
         }
     },
@@ -62,6 +65,7 @@ export default {
       this.gender =''
       this.img =''
       this.region =['湖北省','孝感市','孝南区']
+
     },
     mounted() {
       const db = wx.cloud.database({env: 'cloud-test-ggry6'})
@@ -87,17 +91,15 @@ export default {
               
               }
              })
-            
-               //this.name = name;
-               if(this.name.length>=4&&this.name.length<=8&&this.password.length>=6){
+          
+               if(this.reg_name.test(this.name)&&this.reg_password.test(this.password)){
                    this.dis = false;
                }else{
                    this.dis = true;
                }
            },
         password:function(){
-                //this.password = password;
-                if(this.name.length>=4&&this.name.length<=8&&this.password.length>=6){
+                  if(this.reg_name.test(this.name)&&this.reg_password.test(this.password)){
                    this.dis = false;
                }else{
                    this.dis = true;

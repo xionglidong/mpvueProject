@@ -1,6 +1,5 @@
 <template>
   <div class="order_detail" >
-    
     <span>{{title}}</span>
     <span class="r_icon">
       <span v-if="text" class="detail">{{text}}</span>
@@ -13,7 +12,8 @@ export default {
   props: {
     icon: String,
     title: String,
-    text: String
+    text: String,
+    erweima:String
   }
 };
 </script>

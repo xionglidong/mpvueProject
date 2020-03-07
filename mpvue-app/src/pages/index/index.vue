@@ -46,7 +46,7 @@ export default {
         })
       }else{
         this.$store.dispatch("setUsers",res.data[0]);
-         console.log(res.data[0])
+        
         wx.switchTab({
             url: "../learn/main"
           });
@@ -66,7 +66,7 @@ export default {
     getUserInfo(e) {
       // 判断授权是否成功
       if (e.mp.detail.userInfo) {
-        console.log(e.mp.detail.userInfo);
+        //console.log(e.mp.detail.userInfo);
         // 存储到vuex
         this.$store.dispatch("setIsAuthenticated", true);
         this.$store.dispatch("setUser", e.mp.detail.userInfo);

@@ -70,12 +70,6 @@ export default {
         url: `../watchLesson/main?db=${index}`,
         success: function(res){
           // success
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
         }
       })
     },
