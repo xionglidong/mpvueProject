@@ -85,22 +85,22 @@ export default {
     }
 },
   methods: {
-      getdanmu(){
-        this.videoContext = wx.createVideoContext('myvideo')
-          this.videoContext.sendDanmu({
-          text: this.danmulist,
-          color:'#000000'
-         });
-      },
-      zero(){
-        this.danmulist = ""
-      },
-      mouseup(){
-        this.danmulist=""
-      },
-      focus(){
-        this.placeholder = ""
-      },
+      // getdanmu(){
+      //   this.videoContext = wx.createVideoContext('myvideo')
+      //     this.videoContext.sendDanmu({
+      //     text: this.danmulist,
+      //     color:'#000000'
+      //    });
+      // },
+      // zero(){
+      //   this.danmulist = ""
+      // },
+      // mouseup(){
+      //   this.danmulist=""
+      // },
+      // focus(){
+      //   this.placeholder = ""
+      // },
       blur(){
         this.placeholder = '请注意弹幕礼仪'
       },

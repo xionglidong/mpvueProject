@@ -87,11 +87,7 @@ export default {
                 this.dis = true
               }else{
                 this.double =true
-              }
-              
-              }
-             })
-          
+              }}})
                if(this.reg_name.test(this.name)&&this.reg_password.test(this.password)){
                    this.dis = false;
                }else{
@@ -103,10 +99,7 @@ export default {
                    this.dis = false;
                }else{
                    this.dis = true;
-               }
-       }
-
-       },
+               }}},
       
   methods: {
     radioChange(e){
@@ -134,24 +127,13 @@ export default {
       })
     },
     register(){
-     wx.showLoading({
-        title: '注册中'
-      })
+     wx.showLoading({title: '注册中'})
        wx.cloud.uploadFile({
             cloudPath:`${this.index+1}.png`,
             filePath:this.img,
-            success:res =>{
-              
-              
-              //this.index +=1
-              },
-              fail:res=>{
-                
-              },
               complete:res=>{
-                this.img = this.img==''?"":`cloud://cloud-test-ggry6.636c-cloud-test-ggry6-1301414461/${this.index+1}.png`
-                // this.name = this.name
-                // this.password = this.password
+                this.img = this.img==''?"":`cloud://
+                cloud-test-ggry6.636c-cloud-test-ggry6-1301414461/${this.index+1}.png`
                 wx.cloud.callFunction({
                 name:'register',
                 data:{
@@ -160,8 +142,7 @@ export default {
                   region:this.region,
                   gender:this.gender,
                   img:this.img
-                  }
-                })
+                  }})
               wx.hideLoading({
               success:res=>{
               wx.showToast({
@@ -172,13 +153,7 @@ export default {
                 this.index+=1
                 wx.navigateBack({
                   delta: 1, 
-                })
-              }
-          })
-        }
-      })
-              }
-              })
+                })}})}})}})
      
 
 
