@@ -61,7 +61,7 @@ export default {
       circular: true,
       currentIndex: 0,
       toChildView: "",
-      swiperHeight:240,
+      swiperHeight:720,
       database:[]
     };
   },
@@ -92,12 +92,6 @@ export default {
         success: function(res){
           // success
         },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
       })
     },
     switchItem(index) {
